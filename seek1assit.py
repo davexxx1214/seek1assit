@@ -66,7 +66,7 @@ class seek1assit(Plugin):
                 elif response["event"] == "articles" and self.show_details == True:
                     for i, article in enumerate(response["articles"]):
                         authors = ", ".join(article["authors"])
-                        year = "(" + article["year"] + ")"
+                        year = "(" + str(article["year"]) + ")"
                         url = self.short_url(article["url"])
                         if url is None:
                             url = article["url"]

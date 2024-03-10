@@ -67,9 +67,10 @@ class seek1assit(Plugin):
                     for i, article in enumerate(response["articles"]):
                         authors = ", ".join(article["authors"])
                         year = "(" + str(article["year"]) + ")"
-                        url = self.short_url(article["url"])
-                        if url is None:
-                            url = article["url"]
+                        # url = self.short_url(article["url"])
+                        # if url is None:
+                        #     url = article["url"]
+                        url = article["url"]
                         articles.append(f"{i+1}. {authors} {year}：{url}")
 
             if llm_answer is not None:
